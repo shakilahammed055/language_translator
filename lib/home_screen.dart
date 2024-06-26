@@ -124,12 +124,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ),
               Padding(padding: EdgeInsets.all(8),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+
+                  ),
+                  onPressed: (){},
+                    child: Text("Translate"),
+
+                ),
 
               ),
 
-              Row(
 
-              )
             ],
           ),
         ),
