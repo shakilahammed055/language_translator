@@ -22,6 +22,23 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       output= translation.text.toString();
     });
+    if(src=='--' || dest== '--'){
+      setState(() {
+        output= "Fail to translate";
+      });
+    }
+  }
+  String getLanguageCode(String language){
+    if(language== "English"){
+      return "en";
+    }else if(
+    language=="Bengali"
+    ){
+      return "bn";
+    }else if(language=="Chinese"){
+      return "chi";
+    }
+    return "--";
   }
 
   @override
@@ -137,7 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: ElevatedButton.styleFrom(
 
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+
+                  },
                     child: Text("Translate"),
 
                 ),
