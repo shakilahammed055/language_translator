@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  var languages = ["Bengali","English","Chinese"];
+  var languages = ["Bengali","English","Hindi"];
   var originLanguage = "From";
   var destinationLanguage = "to";
   var output = "";
@@ -35,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
     language=="Bengali"
     ){
       return "bn";
-    }else if(language=="Chinese"){
-      return "chi";
+    }else if(language=="Hindi"){
+      return "hin";
     }
     return "--";
   }
@@ -152,15 +152,23 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(padding: EdgeInsets.all(8),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-
+                    foregroundColor: Color(0xff2b3c5a)
                   ),
                   onPressed: (){
-
+                    translate(getLanguageCode(originLanguage),
+                        getLanguageCode(destinationLanguage), languageController.text.toString());
                   },
                     child: Text("Translate"),
-
                 ),
-
+              ),
+              SizedBox(height: 20),
+              Text(
+                "\n$output",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
               ),
 
 
